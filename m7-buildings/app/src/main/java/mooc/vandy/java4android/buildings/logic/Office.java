@@ -62,11 +62,13 @@ public class Office
 
     public String toString()
     {
-        String officeData = super.toString();
+        String officeData = "Business: ";
         if (this.mBusinessName != null)
-            officeData += "; has a business name";
+            officeData += this.mBusinessName;
+        else
+            officeData += "unoccupied";
         if (this.mParkingSpaces > 0)
-            officeData += "; has a parking space";
+            officeData += "; has" + this.mParkingSpaces + " parking spaces";
 
         return officeData;
     }

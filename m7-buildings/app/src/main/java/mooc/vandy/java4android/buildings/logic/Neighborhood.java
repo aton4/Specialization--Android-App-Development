@@ -17,6 +17,7 @@ public final class Neighborhood {
 
     public static void print(Building[] buildings, String header, OutputInterface out)
     {
+        header += "\n";
         for (Building element : buildings)
             header +=  element.toString() + "\n";
 

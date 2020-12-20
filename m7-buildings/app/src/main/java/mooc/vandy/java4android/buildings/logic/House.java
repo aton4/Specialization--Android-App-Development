@@ -53,7 +53,7 @@ public class House
 
     public String toString()
     {
-        String houseData;
+        String houseData = "Owner: ";
         if (this.mOwner == null)
             houseData = "n/a";
         else
