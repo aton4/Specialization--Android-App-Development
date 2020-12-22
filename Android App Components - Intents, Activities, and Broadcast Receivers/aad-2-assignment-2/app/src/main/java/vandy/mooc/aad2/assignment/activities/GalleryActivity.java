@@ -106,7 +106,7 @@ public class GalleryActivity
         // Call base class helper method to register your downloader
         // implementation class.
         // TODO - you fill in here.
-        this.registerDownloader();
+        this.registerDownloader(null);
     }
 
     /**
@@ -222,6 +222,7 @@ public class GalleryActivity
         // Call an Activity method to end this activity and return
         // to parent activity.
         // TODO - you fill in here.
+        this.onDestroy();
 
 
         Log.d(TAG, "Activity finished.");
