@@ -11,8 +11,12 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import vandy.mooc.aad2.assignment.R;
+import vandy.mooc.aad2.assignment.downloader.DownloadFactory;
 import vandy.mooc.aad2.assignment.downloader.HaMeRDownloader;
 import vandy.mooc.aad2.framework.application.activities.GalleryActivityBase;
+import vandy.mooc.aad2.framework.downloader.DefaultDownloader;
+import vandy.mooc.aad2.framework.downloader.DownloadPolicy;
+import vandy.mooc.aad2.framework.downloader.Request;
 import vandy.mooc.aad2.framework.utils.UriUtils;
 import vandy.mooc.aad2.framework.utils.ViewUtils;
 
@@ -98,6 +102,7 @@ public class GalleryActivity
             // starting intent and pass these URLs into the super class using
             // the setItems() helper method.
             // TODO - you fill in here.
+            // TODO - you fill in here.
             Log.i("tage", "begin gallery onCreate");
             this.setItems(extractInputUrlsFromIntent(getIntent()));
             Log.i("tage", "end gallery onCreate");
@@ -106,7 +111,7 @@ public class GalleryActivity
         // Call base class helper method to register your downloader
         // implementation class.
         // TODO - you fill in here.
-        this.registerDownloader(null);
+        this.registerDownloader(DownloadFactory.getDownloader(DownloadPolicy.HaMeRDownloader,getApplicationContext(), new Request<Integer>()));
     }
 
     /**
@@ -222,7 +227,7 @@ public class GalleryActivity
         // Call an Activity method to end this activity and return
         // to parent activity.
         // TODO - you fill in here.
-        this.onDestroy();
+        this.finish();
 
 
         Log.d(TAG, "Activity finished.");
